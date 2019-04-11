@@ -6,7 +6,7 @@ new Vue({
 
         currencies: {},
 
-        amount: 0,
+        amount: null,
         from: 'EUR',
         to: 'USD',
         result: 0,
