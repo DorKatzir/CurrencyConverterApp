@@ -24,15 +24,18 @@
 
     <body>
 
-        <div id="app">
+        <div id="app" class="">
             <div class="container mt-5 pt-5 pb-5" style="background-color: #E7F7F9;">
 
-                <div class="row mb-4">
+                <div class="row">
                     <div class="col-md-6 offset-md-3">
                         <label>From</label>
                         <select v-model="from" name="" class="form-control" id="">
                             <option :value="currency.id" v-for="currency in formattedCurrencies">
-                                {{ currency.id }} - {{ currency.currencyName }} - {{ currency.currencySymbol }}
+                                {{ currency.id }} -
+                                {{ currency.currencyName.length > 21 ? currency.currencyName.slice(0,-20) : currency.currencyName }}
+                                -
+                                {{ currency.currencySymbol }}
                             </option>
 
                         </select>

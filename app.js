@@ -5,7 +5,6 @@ new Vue({
     data: {
 
         currencies: {},
-
         amount: null,
         from: 'EUR',
         to: 'USD',
@@ -22,6 +21,7 @@ new Vue({
     computed: {
 
         formattedCurrencies() {
+            // console.log(Object.values(this.currencies))
 
             return Object.values(this.currencies)
         },
