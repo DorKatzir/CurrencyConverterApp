@@ -47,7 +47,9 @@
                         <label>To</label>
                         <select v-model="to" name="" class="form-control" id="">
                             <option :value="currency.id" v-for="currency in formattedCurrencies">
-                                {{ currency.id }} - {{ currency.currencyName }} - {{ currency.currencySymbol }}
+                                {{ currency.id }} -
+                                {{ currency.currencyName.length > 21 ? currency.currencyName.slice(0,-20) : currency.currencyName }}
+                                {{ currency.currencySymbol }}
                             </option>
                         </select>
                     </div>
