@@ -5,8 +5,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 
         <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
         <title>Currency Converter</title>
@@ -45,13 +46,27 @@
                 background-color: rgb(231, 247, 249);
                 max-width: 30rem;
             }
+
+            footer p {
+                background-color: #fff;
+
+            }
+
+
+            @media screen and (max-width: 420px) {
+                header {
+                    padding-top: 3rem;
+                    padding-bottom: 1rem;
+                }
+
+            }
         </style>
     </head>
 
     <body>
 
-        <header>
-            <h1 class="display-5 text-dark">Currency Converter</h1>
+        <header class="">
+            <h1 class="display-5 text-center text-dark">Currency Converter</h1>
         </header>
         <main class="">
             <div id="app" class="card card-body rounded border border-white">
@@ -85,12 +100,12 @@
                         </div>
                     </div>
 
-                    <div class="row my-5">
+                    <div class="row mt-5 mb-3">
                         <div class="col">
-                            <input v-model="amount" type="text" placeholder="Insert Amount here..."
-                                class="form-control">
-                            <div class="text-center mt-5">
-                                <button :disabled="disabled" @click="convertCurrency()" class="btn btn-lg btn-primary">
+                            <input v-model="amount" type="text" placeholder="Insert Amount..." class="form-control">
+                            <div class="text-center">
+                                <button :disabled="disabled" @click="convertCurrency()"
+                                    class="btn btn-lg rounded btn-primary mt-5">
                                     {{ loading ? 'Converting...' : 'Convert' }}
                                 </button>
                             </div>
@@ -99,14 +114,27 @@
 
                     <div class="row">
                         <div class="col">
-                            <h1 class="text-center text-dark display-4">{{ calculateResult }}</h1>
+                            <h4 class="text-center display-4">{{ calculateResult }}</h4>
                         </div>
                     </div>
 
                 </div>
             </div>
         </main>
+        <footer class="container">
+            <div class="row mt-5">
+                <div class="col">
 
+                    <h6 class="text-center">Created with:
+                        <span class="badge badge-secondary rounded">VueJS</span>
+                        <span class="badge badge-secondary rounded">API free web services</span>
+                        <span class="badge badge-secondary rounded">Bootstrap</span>
+                    </h6>
+
+                </div>
+            </div>
+
+        </footer>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
         <script src="app.js"></script>
