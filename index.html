@@ -16,66 +16,96 @@
             }
 
             body {
-                /* background-color: #E7F7F9; */
+                background-color: rgb(209, 234, 238);
                 font-family: 'Poppins', sans-serif;
+                display: flex;
+                flex-direction: column;
+
+            }
+
+            header {
+
+                padding-bottom: 2rem;
+                padding-top: 5rem;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+
+            }
+
+
+            main {
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .card-body {
+                background-color: rgb(231, 247, 249);
+                max-width: 30rem;
             }
         </style>
     </head>
 
     <body>
 
-        <div id="app" class="">
-            <div class="container mt-5 pt-5 pb-5" style="background-color: #E7F7F9;">
+        <header>
+            <h1 class="display-5 text-dark">Currency Converter</h1>
+        </header>
+        <main class="">
+            <div id="app" class="card card-body rounded border border-white">
+                <div class="container">
 
-                <div class="row">
-                    <div class="col-md-6 offset-md-3">
-                        <label>From</label>
-                        <select v-model="from" name="" class="form-control" id="">
-                            <option :value="currency.id" v-for="currency in formattedCurrencies">
-                                {{ currency.id }} -
-                                {{ currency.currencyName.length > 21 ? currency.currencyName.slice(0,-20) : currency.currencyName }}
-                                -
-                                {{ currency.currencySymbol }}
-                            </option>
+                    <div class="row my-3">
+                        <div class="col">
+                            <label>From</label>
+                            <select v-model="from" name="" class="form-control" id="">
+                                <option :value="currency.id" v-for="currency in formattedCurrencies">
+                                    {{ currency.id }} -
+                                    {{ currency.currencyName.length > 21 ? currency.currencyName.slice(0,-20) : currency.currencyName }}
+                                    -
+                                    {{ currency.currencySymbol }}
+                                </option>
 
-                        </select>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 offset-md-3">
-                        <label>To</label>
-                        <select v-model="to" name="" class="form-control" id="">
-                            <option :value="currency.id" v-for="currency in formattedCurrencies">
-                                {{ currency.id }} -
-                                {{ currency.currencyName.length > 21 ? currency.currencyName.slice(0,-20) : currency.currencyName }}
-                                {{ currency.currencySymbol }}
-                            </option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 offset-md-3">
-                        <input v-model="amount" type="text" placeholder="Insert Amount here..."
-                            class="form-control my-5">
-                        <div class="text-center">
-                            <button :disabled="disabled" @click="convertCurrency()" class="btn btn-lg btn-primary">
-                                {{ loading ? 'Converting...' : 'Convert' }}
-                            </button>
+                            </select>
                         </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-6 offset-md-3">
-                        <h1 class="text-center display-2 mt-5">{{ calculateResult }}</h1>
+                    <div class="row my-3">
+                        <div class="col">
+                            <label>To</label>
+                            <select v-model="to" name="" class="form-control" id="">
+                                <option :value="currency.id" v-for="currency in formattedCurrencies">
+                                    {{ currency.id }} -
+                                    {{ currency.currencyName.length > 21 ? currency.currencyName.slice(0,-20) : currency.currencyName }}
+                                    {{ currency.currencySymbol }}
+                                </option>
+                            </select>
+                        </div>
                     </div>
+
+                    <div class="row my-5">
+                        <div class="col">
+                            <input v-model="amount" type="text" placeholder="Insert Amount here..."
+                                class="form-control">
+                            <div class="text-center mt-5">
+                                <button :disabled="disabled" @click="convertCurrency()" class="btn btn-lg btn-primary">
+                                    {{ loading ? 'Converting...' : 'Convert' }}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="text-center text-dark display-4">{{ calculateResult }}</h1>
+                        </div>
+                    </div>
+
                 </div>
-
             </div>
-        </div>
-
+        </main>
 
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
