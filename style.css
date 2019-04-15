@@ -1,0 +1,43 @@
+ * {
+     border-radius: 0 !important;
+ }
+
+ body {
+     background-color: rgb(209, 234, 238);
+     font-family: 'Poppins', sans-serif;
+     display: flex;
+     flex-direction: column;
+ }
+
+ header {
+     padding-bottom: 2rem;
+     padding-top: 5rem;
+     display: flex;
+     justify-content: center;
+     align-items: flex-end;
+ }
+
+
+ main {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .card-body {
+     background-color: rgb(231, 247, 249);
+     max-width: 30rem;
+ }
+
+ footer p {
+     background-color: #fff;
+ }
+
+
+ @media screen and (max-width: 420px) {
+     header {
+         padding-top: 3rem;
+         padding-bottom: 1rem;
+     }
+
+ }
