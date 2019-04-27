@@ -1,5 +1,7 @@
 # Currency Converter App
 Vuejs Basic Currency Converter App Created with Free API Web Service.
+# <h4>Currency Converter Link</h4>
+https://dorkatzir.github.io/CurrencyConverterApp
 
 # <h4>From basic to advanced - Dev Goals</h4>
 <ul>
@@ -16,5 +18,4 @@ Vuejs Basic Currency Converter App Created with Free API Web Service.
 <li>Design a Reverse Button</li>
 </ul>
 
-# <h4>Currency Converter Link</h4>
-https://dorkatzir.github.io/CurrencyConverterApp
+
